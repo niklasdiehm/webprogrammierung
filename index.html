@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Rezeptverwaltung</title>
+
+  <link rel="stylesheet" href="css/master.css">
+  <link rel="stylesheet" href="fontello/css/fontello.css">
+  <link rel="icon" href="img/logo.png">
+
+  <script src="js/app.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/page-main.js"></script>
+  <script src="js/page-new.js"></script>
+
+  <script>
+    window.addEventListener("load", () => {
+      let app = new App("Rezeptverwaltung");
+      let pageMain = new PageMain(app);
+      app.router.setUrlRoutes([{
+        url: "^/$",
+        obj: pageMain,
+      }, {
+        url: "^/new/$",
+        obj: new PageNew(app),
+      }]);
+      app.router.run();
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <img src="img/logo.png" alt="Logo Homepage" class="mobile-hidden">
+    <nav>
+      <div id="nav-hamburger-menue">
+        <button class="icon-menu"></button>
+        &nbsp;
+        <!-- keinen Zeilenumbruch, alles soll in einer Zeile stehen -->
+        <b>Rezept-Dieter</b>
+      </div>
+      <ul class="mobile-hidden" id="navigationList">
+        <li>
+          <a href="#">Startseite</a>
+          <a href="#/new/">Neues Rezept</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main id="page-main">
+    <h2>Alle Rezepte</h3>
+      <section id="rezepte"></section>
+  </main>
+
+  <main id="page-new">
+    <div class="hinzufuegen">
+      <button class="button-add-rezept">Rezept hinzufügen</button>
+    </div>
+
+    <div class="ueberschrift">
+      <input type="text" class="input-name" placeholder="Name des Rezeptes...">
+    </div>
+    <div class="zutaten">
+      <input type="text" class="input-Zutat" placeholder="Zutat...">
+      <button class="button-Zutat">Hinzufügen</button>
+      <ul class="zutaten-liste"></ul>
+    </div>
+    <div class="anleitung">
+      <input type="text" class="input-Anleitung" placeholder="Anleitung...">
+      <button class="button-Anleitung">Hinzufügen</button>
+      <ol class="anleitung-liste"></ol>
+
+    </div>
+  </main>
+  <footer>
+    &copy; Copyright 2020 Rezept-Dieter. All Right Reserved.
+  </footer>
+</body>
+
+</html>

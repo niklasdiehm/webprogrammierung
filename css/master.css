@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14pt;
+
+  background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* Bild auf vollem Bildschirm darstellen */
+  background-attachment: fixed; /* beim Scrollen nicht bewegen */
+}
+
+header{
+  background: white;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  padding: 1rem;
+  display: flex;
+}
+header img {
+  height: 5em;
+  padding-right: 2em;
+}
+
+header nav button {
+  border: 0;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+header nav ul a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  padding-right: 1em;
+}
+header nav ul a:visited {
+  text-decoration: none;
+}
+header nav ul a:hover {
+  color: rgb(31,50,174);
+}
+
+main {
+  margin: 1em;
+  padding-bottom: 3em;
+}
+
+
+#rezepte {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.rezept {
+  position: relative;
+  background-color: white;
+  border: 1px solid grey;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: auto;
+  width: auto;
+  padding-right: 2em;
+  padding-left: 2em;
+  margin-right: 1em;
+}
+
+.rezept button {
+  background-color: rgb(192,183,242);
+}
+
+.rezept button:hover {
+  background-color: rgb(232,226,253);
+  cursor: pointer;
+}
+
+#page-new main, div, button, input {
+  font-size: 16pt;
+}
+
+#page-new div {
+  margin-top: 1em;
+}
+
+#page-new button {
+  background-color: rgb(192,183,242);
+}
+#page-new button:hover {
+  background-color: rgb(232,226,253);
+  cursor: pointer;
+}
+#page-new input {
+  border: 0;
+  border-bottom: 1px solid #555;
+  background: transparent;
+}
+#page-new input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e74c3c;
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 99%;
+  height: 2em;
+  background-color: white;
+  display: flex;
+  padding: 1em 0em 1em 1em;
+}
+
+
+@media (min-width: 60em) {
+  #nav-hamburger-menue {
+    display: none;
+  }
+}
+@media (max-width: 60em) {
+  .mobile-hidden {
+    display: none;
+  }
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  footer {
+    width: 97%;
+  }
+
+}
+
+.hidden {
+  display: none;
+}
